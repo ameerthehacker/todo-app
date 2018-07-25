@@ -5,6 +5,11 @@ import { TodoFormComponent } from "./components/todo-form/todo-form.component";
 export const appRoutes: Routes = [
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
     component: TodoListComponent
   },
   {

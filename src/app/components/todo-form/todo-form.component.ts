@@ -24,6 +24,6 @@ export class TodoFormComponent implements OnInit {
   
   onBtnSave() {
     this.todoService.addTodo(this.formGroup.get('todo').value);
-    this.router.navigate(['/']);
+    this.router.navigate(['/home']);
   }
 }

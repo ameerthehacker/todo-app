@@ -1,5 +1,5 @@
 <form [formGroup]="formGroup">
   <label for="todo">Todo</label> <br>
-  <input type="text" id="#todo" formControlName="todo"> <br>
-  <button [disabled]="formGroup.invalid" (click)="onBtnSave()">Save</button>
+  <input type="text" id="todo" formControlName="todo"> <br>
+  <button id="btn-save" [disabled]="formGroup.invalid" (click)="onBtnSave()">Save</button>
 </form>
