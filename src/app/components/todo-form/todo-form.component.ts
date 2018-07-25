@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+
+import { TodoService } from '../../services/todo.service';
 
 @Component({
   selector: 'app-todo-form',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoFormComponent implements OnInit {
 
-  constructor() { }
+  formGroup: FormGroup;
+
+  constructor(private todoService: TodoService, private router: Router) { 
+    this.formGroup = new FormGroup({
+      todo: new FormControl('', Validators.required)
+    });
+  }
 
   ngOnInit() {
   }
-
+  
+  onBtnSave() {
+    this.todoService.addTodo(this.formGroup.get('todo').value);
+    this.router.navigate(['/']);
+  }
 }

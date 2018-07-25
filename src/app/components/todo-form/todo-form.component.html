@@ -1,3 +1,5 @@
-<p>
-  todo-form works!
-</p>
+<form [formGroup]="formGroup">
+  <label for="todo">Todo</label> <br>
+  <input type="text" id="#todo" formControlName="todo"> <br>
+  <button [disabled]="formGroup.invalid" (click)="onBtnSave()">Save</button>
+</form>
